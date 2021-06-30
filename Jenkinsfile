@@ -4,7 +4,7 @@ pipeline {
         stage('sending email') {
             steps {
               //  sh 'python3 text.py'
-                echo '${BUILD_URL}'
+                echo ${BUILD_URL}
             }
         }
         stage('Approval') {
