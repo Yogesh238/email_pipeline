@@ -3,8 +3,6 @@ from botocore.exceptions import ClientError
 from sys import argv
 import requests
 
-ENV = argv[1]
-url = argv[2]
 
 
 RECIPIENT = "sachin.saini@cloverbaytechnologies.com"
