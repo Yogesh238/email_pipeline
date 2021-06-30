@@ -2,10 +2,10 @@ pipeline {
     agent any
      
     stages {
-        stage('Ok') {
+        stage('send email') {
             steps {
-                echo "Ok"
+                sh 'python3 email.py'
             }
-        }
+        }     
     }
 }
