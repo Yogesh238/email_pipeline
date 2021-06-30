@@ -13,6 +13,7 @@ CHARSET = "UTF-8"
 BODY_TEXT = ("\r\n"
             )
 # The email body for recipients with non-HTML email clients.
+SUBJECT = "approve"
 BODY_HTML = """<html>
                 <head></head>
                 <body>
