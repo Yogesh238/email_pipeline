@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('send email') {
             steps {
-                sh 'python3 email.py'
+                sh 'python3 text.py'
             }
         }     
     }
