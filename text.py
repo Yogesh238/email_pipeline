@@ -13,11 +13,13 @@ CHARSET = "UTF-8"
 BODY_TEXT = ("\r\n"
             )
 # The email body for recipients with non-HTML email clients.
-SUBJECT = "approve"
+SUBJECT = "Approve the Production Job"
 BODY_HTML = """<html>
                 <head></head>
                 <body>
-                  <h3>http://100.25.211.184:8080/job/demo/build?token=newjob</h3>
+                  Hi,
+                  Please login in Jenkins & approve the production job so that deployment process can start
+                  <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>
                 </body>
                 </html>
                             """
