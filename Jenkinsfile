@@ -3,8 +3,7 @@ pipeline {
     stages {
         stage('sending email') {
             steps {
-              //  sh 'python3 text.py'
-                echo ${BUILD_NUMBER}
+                sh 'python3 text.py'
             }
         }
         stage('Approval') {
