@@ -1,16 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
-            agent any
+        stage('sending email') {
             steps {
-                echo 'compiling...'
-            }
-        }
-        stage('Test') {
-            agent any
-            steps {
-                echo 'testing...'
+                sh 'python3 text.py'
             }
         }
         stage('Approval') {
@@ -26,9 +19,8 @@ pipeline {
             agent any
             steps {
                 // uses https://plugins.jenkins.io/lockable-resources
-                lock(resource: 'deployApplication'){
+               // lock(resource: 'deployApplication'){
                     echo 'Deploying...'
-                }
             }
         }
     }
