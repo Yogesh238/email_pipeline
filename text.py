@@ -10,7 +10,8 @@ SENDER = "sachin.saini@cloverbaytechnologies.com"
 AWS_REGION = "us-east-1"
 CHARSET = "UTF-8"
 
-
+BODY_TEXT = ("\r\n"
+            )
 # The email body for recipients with non-HTML email clients.
 BODY_HTML = """<html>
                 <head></head>
