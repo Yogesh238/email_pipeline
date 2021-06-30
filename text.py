@@ -12,9 +12,13 @@ CHARSET = "UTF-8"
 
 
 # The email body for recipients with non-HTML email clients.
-BODY_TEXT = ("\r\n"
-            )
-'http://100.25.211.184:8080/job/demo/build?token=newjob'
+ BODY_HTML = """<html>
+                <head></head>
+                <body>
+                  <h3>http://100.25.211.184:8080/job/demo/build?token=newjob</h3>
+                </body>
+                </html>
+                            """
             client = boto3.client('ses',region_name=AWS_REGION)
             try:
                 response = client.send_email(
