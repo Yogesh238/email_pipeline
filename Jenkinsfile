@@ -18,7 +18,7 @@ pipeline {
             agent none
             steps {
                 script {
-                    def deploymentDelay = input (id: 'Deploy', message: 'Deploy to production?', submitter: 'user1', parameters: [[$class: 'BooleanParameterDefinition', defaultValue: true, description: '', name: 'Please confirm you agree with this']])]
+                    def deploymentDelay = input (id: 'Deploy', message: 'Deploy to production?', submitter: 'user1', parameters: [[$class: 'BooleanParameterDefinition', defaultValue: true, description: '', name: 'Please confirm you agree with this']])
                 }
             }
         }
