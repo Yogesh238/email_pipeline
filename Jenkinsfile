@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('sending email') {
             steps {
-                sh 'python3 text.py'
+              //  sh 'python3 text.py'
+                echo '${BUILD_URL}'
             }
         }
         stage('Approval') {
