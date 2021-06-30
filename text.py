@@ -18,8 +18,8 @@ BODY_HTML = """<html>
                 <head></head>
                 <body>
                   Hi,
-                  Please login in Jenkins & approve the production job so that deployment process can start
-                  <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>
+                  
+                  Please login in Jenkins & approve the production job so that deployment process can start.
                 </body>
                 </html>
                             """
