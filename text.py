@@ -19,36 +19,36 @@ BODY_HTML = """<html>
                 </body>
                 </html>
                             """
-            client = boto3.client('ses',region_name=AWS_REGION)
-            try:
-                response = client.send_email(
-                    Destination={
-                        'ToAddresses': [
-                            RECIPIENT,
-                        ],
-                    },
-                    Message={
-                        'Body': {
-                            'Html': {
-                                'Charset': CHARSET,
-                                'Data': BODY_HTML,
-                            },
-                            'Text': {
-                                'Charset': CHARSET,
-                                'Data': BODY_TEXT,
-                            },
-                        },
-                        'Subject': {
-                            'Charset': CHARSET,
-                            'Data': SUBJECT,
-                        },
-                    },
-                    Source=SENDER,
-                    #ConfigurationSetName=CONFIGURATION_SET,
-                )
+client = boto3.client('ses',region_name=AWS_REGION)
+try:
+    response = client.send_email(
+        Destination={
+            'ToAddresses': [
+                RECIPIENT,
+            ],
+        },
+        Message={
+            'Body': {
+                'Html': {
+                    'Charset': CHARSET,
+                    'Data': BODY_HTML,
+                },
+                'Text': {
+                    'Charset': CHARSET,
+                    'Data': BODY_TEXT,
+                },
+            },
+            'Subject': {
+                'Charset': CHARSET,
+                'Data': SUBJECT,
+            },
+        },
+        Source=SENDER,
+        #ConfigurationSetName=CONFIGURATION_SET,
+    )
 
-            except ClientError as e:
-                print(e.response['Error']['Message'])
-            else:
-                print("Email sent! Message ID:"),
-                print(response['MessageId'])
+except ClientError as e:
+    print(e.response['Error']['Message'])
+else:
+    print("Email sent! Message ID:"),
+    print(response['MessageId'])
